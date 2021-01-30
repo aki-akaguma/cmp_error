@@ -1,0 +1,81 @@
+[package]
+name = "cmp_error"
+version = "0.1.0"
+authors = ["aki <aki.akaguma@hotmail.com>"]
+edition = "2018"
+description = "research: comparing error of rust"
+keywords = ["error"]
+categories = ["rust-patterns"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+
+[features]
+
+[dependencies]
+anyhow = "1.0"
+thiserror = "1.0"
+failure = "0.1"
+fxhash = "0.2"
+
+[dev-dependencies]
+criterion = { version = "0.3", default-features = false }
+criterion-cycles-per-byte = "0.1"
+
+[workspace]
+members = [
+    "xtask",
+]
+
+[[bench]]
+name = "bench-null-void"
+path = "benches/bench-null-void.rs"
+harness = false
+
+[[bench]]
+name = "bench-plainerror"
+path = "benches/bench-plainerror.rs"
+harness = false
+
+[[bench]]
+name = "bench-std-error"
+path = "benches/bench-std-error.rs"
+harness = false
+
+[[bench]]
+name = "bench-anyhow"
+path = "benches/bench-anyhow.rs"
+harness = false
+
+[[bench]]
+name = "bench-thiserror"
+path = "benches/bench-thiserror.rs"
+harness = false
+
+[[bench]]
+name = "bench-failure"
+path = "benches/bench-failure.rs"
+harness = false
+
+[[bin]]
+name = "bin-null-void"
+path = "src/bin-null-void.rs"
+
+[[bin]]
+name = "bin-plainerror"
+path = "src/bin-plainerror.rs"
+
+[[bin]]
+name = "bin-std-error"
+path = "src/bin-std-error.rs"
+
+[[bin]]
+name = "bin-anyhow"
+path = "src/bin-anyhow.rs"
+
+[[bin]]
+name = "bin-thiserror"
+path = "src/bin-thiserror.rs"
+
+[[bin]]
+name = "bin-failure"
+path = "src/bin-failure.rs"
