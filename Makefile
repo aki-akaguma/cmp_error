@@ -1,3 +1,4 @@
+TASKSET = taskset -c 2
 
 TARGET_BINS = \
 	target/release/bin-null-void \
@@ -11,12 +12,12 @@ all:
 
 bench:
 	cargo bench --no-run
-	cargo bench --bench=bench-null-void  -- -n > target/z.bench-null-void.log
-	cargo bench --bench=bench-plainerror -- -n > target/z.bench-plainerror.log
-	cargo bench --bench=bench-thiserror  -- -n > target/z.bench-thiserror.log
-	cargo bench --bench=bench-std-error  -- -n > target/z.bench-std-error.log
-	cargo bench --bench=bench-anyhow     -- -n > target/z.bench-anyhow.log
-	cargo bench --bench=bench-failure    -- -n > target/z.bench-failure.log
+	$(TASKSET) cargo bench --bench=bench-null-void  -- -n > target/z.bench-null-void.log
+	$(TASKSET) cargo bench --bench=bench-plainerror -- -n > target/z.bench-plainerror.log
+	$(TASKSET) cargo bench --bench=bench-thiserror  -- -n > target/z.bench-thiserror.log
+	$(TASKSET) cargo bench --bench=bench-std-error  -- -n > target/z.bench-std-error.log
+	$(TASKSET) cargo bench --bench=bench-anyhow     -- -n > target/z.bench-anyhow.log
+	$(TASKSET) cargo bench --bench=bench-failure    -- -n > target/z.bench-failure.log
 	size $(TARGET_BINS) > target/z.size-release.log
 
 bench-clean:
