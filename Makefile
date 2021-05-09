@@ -10,8 +10,10 @@ TARGET_BINS = \
 
 all:
 
-bench:
+bench-build:
 	cargo bench --no-run
+
+bench: bench-build
 	$(TASKSET) cargo bench --bench=bench-null-void  -- -n > target/z.bench-null-void.log
 	$(TASKSET) cargo bench --bench=bench-plainerror -- -n > target/z.bench-plainerror.log
 	$(TASKSET) cargo bench --bench=bench-thiserror  -- -n > target/z.bench-thiserror.log
