@@ -13,6 +13,17 @@ This performance test is recursive call program. It is called 1000 times.
 - anyhow: it use crate anyhow.
 - failure: it use crate failure.
 
+rustc 1.53.0 (53cb7b09b 2021-06-17):
+
+|       `name`       |   `bench`   | `.text`  |  `Δ bench`  | `Δ .text` |
+|:-------------------|------------:|---------:|------------:|---------:|
+| null-void          |   21.317 kc |  262 kib |    0.000 kc |    0 kib |
+| plainerror         |   21.359 kc |  263 kib |    0.042 kc |    0 kib |
+| thiserror          |   21.478 kc |  263 kib |    0.160 kc |    0 kib |
+| anyhow             |   23.576 kc |  267 kib |    2.258 kc |    5 kib |
+| std-error          |   30.058 kc |  264 kib |    8.740 kc |    1 kib |
+| failure            |   33.265 kc |  453 kib |   11.948 kc |  190 kib |
+
 rustc 1.52.0 (88f19c6da 2021-05-03):
 
 |       `name`       |   `bench`   | `.text`  |  `Δ bench`  | `Δ .text` |

@@ -6,6 +6,8 @@ fn process_one(count: u32) -> Result<cmp_error::IntOk, anyhow::Error> {
 }
 
 fn criterion_benchmark(c: &mut Criterion<CyclesPerByte>) {
+    memx_cdy::memx_init();
+    //
     let r = process_one(black_box(1000));
     assert!(r.is_err());
     if let Err(err) = r {

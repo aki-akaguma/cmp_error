@@ -2,6 +2,12 @@ TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.1.3 (2021-06-30)
+=====
+
+* update depends: anyhow(1.0.41), thiserror(1.0.25)
+* add memx-cdy(0.1) to `dev-dependencies`
+
 0.1.2 (2021-05-10)
 =====
 

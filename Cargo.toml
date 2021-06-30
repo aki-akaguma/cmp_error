@@ -1,6 +1,6 @@
 [package]
 name = "cmp_error"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 edition = "2018"
 description = "research: comparing error of rust"
@@ -18,6 +18,7 @@ failure = "0.1"
 fxhash = "0.2"
 
 [dev-dependencies]
+memx-cdy = "0.1"
 criterion = { version = "0.3", default-features = false }
 criterion-cycles-per-byte = "0.1"
 
