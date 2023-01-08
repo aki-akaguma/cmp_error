@@ -1,5 +1,8 @@
 # cmp_error
 
+![Rust Version][rustc-image]
+![Apache2/MIT licensed][license-image]
+
 I was researching *error* of rust, and comparing performance.
 
 ## Benchmark Results
@@ -97,3 +100,8 @@ rustc 1.42.0 (b8cedc004 2020-03-09)
 
 In application, anyhow is the best, otherwaise, thiserror or plainerror.
 The failure is *largest .text* size.
+
+[//]: # (badges)
+
+[rustc-image]: https://img.shields.io/badge/rustc-1.56+-blue.svg
+[license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
